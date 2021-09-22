@@ -13,7 +13,7 @@ endif
 if !exists('g:plate_dir')
     let g:plate_dir = stdpath('config') . '/templates'
 endif
-call mkdir(g:plate_dir)
+call mkdir(g:plate_dir, 'p')
 
 " Should we automatically insert a template when a new file is created?
 if !exists('g:plate_auto')
