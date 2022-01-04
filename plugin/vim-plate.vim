@@ -15,11 +15,6 @@ if !exists('g:plate_dir')
 endif
 call mkdir(g:plate_dir, 'p')
 
-" Should we automatically insert a template when a new file is created?
-if !exists('g:plate_auto')
-    let g:plate_auto = 1
-endif
-
 " ------------------------------------------------------------------------------
 " Functionality
 " ------------------------------------------------------------------------------
@@ -49,7 +44,3 @@ function! s:ReplaceBufferWithTemplate(name)
     endif
 endfunction
 command! -nargs=? Template call <SID>ReplaceBufferWithTemplate(<q-args>)
-
-if g:plate_auto == 1
-    autocmd BufNewFile * Template
-endif
